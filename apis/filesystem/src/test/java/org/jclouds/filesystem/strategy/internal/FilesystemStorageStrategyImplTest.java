@@ -688,7 +688,7 @@ public class FilesystemStorageStrategyImplTest {
    
    @Test
    public void testDeletingInvalidPathFileEndsNormally() {
-      String invalidPathBlobKey = "A<!:!@#$%^&*?]8 ";
+      String invalidPathBlobKey = "A<!:!@#$%^&*?]8 /\0";
       try {
          storageStrategy.removeBlob(CONTAINER_NAME, invalidPathBlobKey);
       } catch (InvalidPathException ipe) {
